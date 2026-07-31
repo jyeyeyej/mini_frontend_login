@@ -1,7 +1,7 @@
 """공통 로그인 상태와 인증 동작을 관리합니다."""
 
 import streamlit as st
-
+import httpx
 
 def init_state(
     stored_loginout: str = "logout",
@@ -14,6 +14,7 @@ def init_state(
 
 
 def login(login_id:str, login_pwd:str) -> None:
+
     if (login_id == "id01" and login_pwd == "pwd01"):
         st.session_state.loginout = "login"
         st.session_state.login_id = login_id
